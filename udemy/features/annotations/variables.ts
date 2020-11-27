@@ -8,3 +8,19 @@ let nothing: undefined = null;
 //built in objects
 
 let now: Date = new Date();
+
+//Array
+let colors: string[] = ["red", "blue"];
+let myNumbers: number[] = [1, 2];
+
+let truths: boolean[] = [true, false, false];
+
+//Classes
+class Car {}
+let car: Car = new Car();
+
+// Object literal
+let point: { x: number; y: number } = {
+  x: 10,
+  y: 20,
+};
