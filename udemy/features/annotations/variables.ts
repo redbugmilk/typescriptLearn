@@ -28,5 +28,36 @@ let point: { x: number; y: number } = {
 //Function
 
 const logNumber: (i: number) => void = (i: number) => {
-  console.log(i)
+  console.log(i);
+};
+
+// When to use annotations
+// 1) Function that returns the "any" type
+
+const json = '{"x:10, "y: 20}';
+const coordinates: { x: number; y: number } = JSON.parse(json);
+console.log(coordinates);
+
+// 2) when we declare a variable on one line
+// and initalizate it later
+
+let words = ["red", "green", "blue"];
+let foundWord: boolean;
+
+for (let index = 0; index < words.length; index++) {
+  const element = words[index];
+  if (element === "green") {
+    foundWord = true;
+  }
+}
+
+// 3) variavle whose type cannot be inferred correctly
+
+let numbers = [-10, -1, 12];
+let numberAboveZero: boolean | number = false;
+for (let index = 0; index < numbers.length; index++) {
+  const element = numbers[index];
+  if (element > 0) {
+    numberAboveZero = element;
+  }
 }
