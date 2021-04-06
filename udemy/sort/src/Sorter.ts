@@ -3,6 +3,7 @@ export interface Sortable {
   compare(leftIndex: number, rightIndex: number): boolean;
   length: number;
 }
+
 export class Sorter {
   constructor(public collection: Sortable) {}
   sort(): void {
