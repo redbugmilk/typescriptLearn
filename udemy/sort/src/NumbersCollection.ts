@@ -1,6 +1,8 @@
-import { Sortable } from "./Sorter";
-export class NumbersCollection implements Sortable {
-  constructor(public data: number[]) {}
+import { Sorter } from "./Sorter";
+export class NumbersCollection extends Sorter{
+  constructor(public data: number[]) {
+    super();
+  }
   swap(leftIndex: number, rightIndex: number): void {
     const leftHand = this.data[leftIndex];
     this.data[leftIndex] = this.data[rightIndex];

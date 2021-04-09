@@ -1,6 +1,8 @@
-import { Sortable } from "./Sorter";
-export class CharactersCollection implements Sortable {
-  constructor(public data: string) {}
+import { Sorter } from "./Sorter";
+export class CharactersCollection extends Sorter {
+  constructor(public data: string) {
+    super();
+  }
   swap(leftIndex: number, rightIndex: number): void {
     const characters = this.data.split("");
     const leftHand = characters[leftIndex];
