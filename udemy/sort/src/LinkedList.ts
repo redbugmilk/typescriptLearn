@@ -3,11 +3,8 @@ import { Node } from "./Node";
 
 export class LinkedList implements Sortable {
   head: Node | null = null;
-  constructor(public data: string) {}
+  constructor() {}
   swap(leftIndex: number, rightIndex: number): void {
-    if(!this.head){
-      throw new Error("List is empty");
-    }
     const leftNode = this.at(leftIndex);
     const rightNode = this.at(rightIndex);
     const leftHand = leftNode.data;
@@ -18,7 +15,7 @@ export class LinkedList implements Sortable {
     if(!this.head){
       throw new Error("List is empty");
     }
-    return this.at(leftIndex).data > this.at(rightIndex).data
+    return this.at(leftIndex).data > this.at(rightIndex).data;
   }
   get length(): number {
     if(!this.head){
@@ -43,7 +40,6 @@ export class LinkedList implements Sortable {
       tail = tail.next;
     }
     tail.next = node;
-    return;
   }
   at(index: number): Node {
     if(!this.head){
@@ -51,7 +47,7 @@ export class LinkedList implements Sortable {
     }
     let counter = 0;
     let node: Node | null = this.head;
-    while(node.next){
+    while(node){
       if(index === counter){
         return node;
       }
